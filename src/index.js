@@ -1,16 +1,28 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import { PersistGate } from 'redux-persist/integration/react';
-import {store, persistor} from './Redux/store';
-import { Provider } from 'react-redux';
-import App from './App';
+// Import React library for component development
+import React from "react";
+// Import ReactDOM for rendering React components
+import ReactDOM from "react-dom/client";
+// Import global CSS styles
+import "./index.css";
+// Import PersistGate for Redux state persistence
+import { PersistGate } from "redux-persist/integration/react";
+// Import Redux store and persistor
+import { store, persistor } from "./Redux/store";
+// Import Redux Provider for state management
+import { Provider } from "react-redux";
+// Import main App component
+import App from "./App";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+// Create root element for React application
+const root = ReactDOM.createRoot(document.getElementById("root"));
 
+// Render the application with Redux store and persistence
 root.render(
+  // Redux Provider wraps the entire app for state management
   <Provider store={store}>
+    {/* PersistGate ensures Redux state is rehydrated before rendering */}
     <PersistGate loading={"loading"} persistor={persistor}>
+      {/* Main App component */}
       <App />
     </PersistGate>
   </Provider>
