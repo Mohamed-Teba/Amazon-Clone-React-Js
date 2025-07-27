@@ -1,4 +1,3 @@
-import React from 'react';
 import { categoryData } from '../constants';
 import { useNavigate } from 'react-router-dom';
 
@@ -29,7 +28,6 @@ const Category = () => {
                                             <img className='w-72 h-60' src={item.img} alt='Product' />
                                         </div>
                                         <p className='font-semibold ml-5 mt-4 mb-2'>{item.title}</p>
-                      
                                         <p className='text-cyan-700 text-sm font-medium ml-[20px] group-hover:text-red-400'>See more</p>
                                     </div>
                         }
