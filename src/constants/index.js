@@ -175,7 +175,7 @@ export const categoryData = [
       plot: "Time is Precious, Wear It Well.",
       title: "Men's Watches",
       category: "mens-watches",
-      img: "https://i.dummyjson.com/data/products/62/thumbnail.jpg",
+      img: "https://cdn.dummyjson.com/product-images/mens-watches/longines-master-collection/thumbnail.webp",
     },
     {
       id: "04",
@@ -192,14 +192,14 @@ export const categoryData = [
           img: "https://m.media-amazon.com/images/I/81o11eS8pLL._AC_UL320_.jpg",
         },
         {
-          title: "Lighting",
-          category: "lighting",
-          img: "https://i.dummyjson.com/data/products/96/thumbnail.jpg",
+          title: "Vehicle",
+          category: "vehicle",
+          img: "https://cdn.dummyjson.com/product-images/vehicle/durango-sxt-rwd/thumbnail.webp",
         },
         {
-          title: "Automotive",
-          category: "automotive",
-          img: "https://i.dummyjson.com/data/products/86/thumbnail.jpg",
+          title: "Mobile Accessories",
+          category: "mobile-accessories",
+          img: "https://cdn.dummyjson.com/product-images/mobile-accessories/apple-airpods/thumbnail.webp",
         },
       ]
     },
@@ -217,17 +217,17 @@ export const categoryData = [
         {
           title: "Home-Decoration",
           category: "home-decoration",
-          img: "https://i.dummyjson.com/data/products/26/thumbnail.jpg",
+          img: "https://cdn.dummyjson.com/product-images/home-decoration/plant-pot/thumbnail.webp",
         },
         {
           title: "Furniture",
           category: "furniture",
-          img: "https://i.dummyjson.com/data/products/31/thumbnail.jpg",
+          img: "https://cdn.dummyjson.com/product-images/furniture/annibale-colombo-sofa/thumbnail.webp",
         },
         {
           title: "Motorcycle",
           category: "motorcycle",
-          img: "https://i.dummyjson.com/data/products/92/thumbnail.jpg",
+          img: "https://cdn.dummyjson.com/product-images/motorcycle/kawasaki-z800/thumbnail.webp",
         },
         {
           title: "Groceries",
@@ -255,17 +255,17 @@ export const categoryData = [
         {
           title: "Fragrances",
           category: "fragrances",
-          img: "https://i.dummyjson.com/data/products/12/thumbnail.jpg",
+          img: "https://cdn.dummyjson.com/product-images/fragrances/gucci-bloom-eau-de/thumbnail.webp",
         },
         {
-          title: "Skincare",
-          category: "skincare",
-          img: "https://i.dummyjson.com/data/products/19/thumbnail.jpg",
+          title: "beauty",
+          category: "beauty",
+          img: "https://cdn.dummyjson.com/product-images/beauty/eyeshadow-palette-with-mirror/thumbnail.webp",
         },
         {
           title: "Tops",
           category: "tops",
-          img: "https://i.dummyjson.com/data/products/39/thumbnail.jpg",
+          img: "https://cdn.dummyjson.com/product-images/tops/blue-frock/thumbnail.webp",
         },
       ]
     },
@@ -278,8 +278,8 @@ export const categoryData = [
   ];
   
   export const states =[
-   "Andaman and Nicobar Islands","Andhra Pradesh","Arunachal Pradesh","Assam","Bihar","Chandigarh","Chhattisgarh","Dadra and Nagar Haveli and Daman & Diu","Delhi","Goa","Gujarat","Haryana","Himachal Pradesh","Jammu & Kashmir","Jharkhand","Karnataka",
-  "Kerala","Ladakh","Lakshadweep","Madhya Pradesh","Maharashtra","Manipur","Meghalaya","Mizoram","Nagaland","Odisha","Puducherry","Punjab","Rajasthan","Sikkim","Tamil Nadu","Telangana","Tripura","Uttarakhand","Uttar Pradesh","West Bengal"
+    "Andaman and Nicobar Islands","Andhra Pradesh","Arunachal Pradesh","Assam","Bihar","Chandigarh","Chhattisgarh","Dadra and Nagar Haveli and Daman & Diu","Delhi","Goa","Gujarat","Haryana","Himachal Pradesh","Jammu & Kashmir","Jharkhand","Karnataka",
+    "Kerala","Ladakh","Lakshadweep","Madhya Pradesh","Maharashtra","Manipur","Meghalaya","Mizoram","Nagaland","Odisha","Puducherry","Punjab","Rajasthan","Sikkim","Tamil Nadu","Telangana","Tripura","Uttarakhand","Uttar Pradesh","West Bengal"
   ];
 
   export const months = [
