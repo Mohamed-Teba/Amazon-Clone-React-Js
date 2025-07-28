@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { ScrollRestoration, useLoaderData, useNavigate, Link } from 'react-router-dom';
 import { star } from "../../assets/index";
 import Product from './Product';
@@ -13,11 +13,12 @@ const Products = () => {
   const handleCategoryClick = (category) => {
     navigate(`/${category}`); 
   };
-  const data = useLoaderData();
-  const productsData = data.data.products;
+  const { data } = useLoaderData();
+  const productsData = data.products;
 
   const { category } = useParams();
-  const categoryProducts = category ? productsData.filter((product) => product.category === category) : productsData;
+
+  const categoryProducts = category ? productsData.filter((product) => product.category.toLowerCase() === category.toLowerCase()) : productsData;
 
   const uniqueCategories = Array.from(new Set(productsData.map(product => product.category)));
 
@@ -67,7 +68,6 @@ const Products = () => {
   }
 
   const [filter, setFilter] = useState(false);
-  // console.log(filter);
 
   useEffect(() => {
     document.body.addEventListener("click", (e) => {
