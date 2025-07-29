@@ -47,9 +47,9 @@ A full-stack Amazon.com clone developed with React JS, Firebase backend, and Str
 
 ## 🛠 Tech Stack
 
-| Frontend   | State Management        | Backend              | Styling            | Payment |
-|------------|------------------------|----------------------|--------------------|---------|
-| React JS   | Redux Toolkit + Persist| Firebase Auth/Firestore| Tailwind CSS + MUI|  Stripe  |
+|  Frontend  |    State Management     |         Backend         |       Styling      |   Payment   |
+|------------|-------------------------|-------------------------|--------------------|-------------|
+|  React JS  | Redux Toolkit + Persist | Firebase Auth/Firestore | Tailwind CSS + MUI |    Stripe   |
 
 ### 📦 Key Packages
 
