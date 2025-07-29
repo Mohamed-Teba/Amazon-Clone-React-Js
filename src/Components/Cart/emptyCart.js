@@ -17,6 +17,7 @@ const EmptyCart = () => {
         />
       </div>
 
+<<<<<<< HEAD
       {/* Right side: Text message and a button to redirect to product page */}
       <div className=" mdl:w-[50%] p-5 pl-8 flex flex-col gap-6">
         {/* Main title message */}
@@ -48,3 +49,10 @@ const EmptyCart = () => {
 
 // Exporting the EmptyCart component to be used in other parts of the application
 export default EmptyCart;
+=======
+export default EmptyCart
+
+
+
+
+>>>>>>> 065d13bc514f0944cfe658bbdfd72108175af39c

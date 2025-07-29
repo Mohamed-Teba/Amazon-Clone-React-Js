@@ -7,6 +7,7 @@ import { useSelector } from "react-redux"; // Redux hook to access global state
 import { useCart } from "../../context/userCartContext"; // Custom cart context hook
 
 function CardDetails() {
+<<<<<<< HEAD
   // Getting product details for "Buy Now" functionality
   const product = useSelector((state) => state.amazon.buyNowProduct);
   if (product) {
@@ -64,6 +65,73 @@ function CardDetails() {
     if (cardNumber === "") {
       setCardNumberError("Please enter a 16 digit card number.");
       isValid = false;
+=======
+    const product = useSelector((state) => state.amazon.buyNowProduct);
+    if (product) {
+        var productQty = product.quantity;
+        var productPrice = product.price;
+        var productTotalPrice = productPrice * productQty;
+    }
+    
+    const { cartTotalPrice } = useCart();
+
+    let deliveryCharges = 0;
+    if ((productTotalPrice || cartTotalPrice) < 499) {
+        deliveryCharges = 40;
+    }
+
+    const orderPrice = product ? (productTotalPrice + deliveryCharges) : (cartTotalPrice + deliveryCharges)
+    const [cardNumber, setCardNumber] = useState('');
+    const [cardName, setCardName] = useState('');
+    const [cardExpiryMonth, setCardExpiryMonth] = useState('');
+    const [cardExpiryYear, setCardExpiryYear] = useState('');
+    const [cvv, setCvv] = useState('');
+    const [cardNumberError, setCardNumberError] = useState('');
+    const [cardNameError, setCardNameError] = useState('');
+    const [loading, setLoading] = useState(false);
+    const [cvvError, setCvvError] = useState('');
+
+    const userInfo = useSelector((state) => state.amazon.userInfo);
+    var userEmail = userInfo.email;
+
+    const validate = () => {
+        const reqName = /^[A-Za-z\s]+$/;
+        const reqNumber = /^[0-9]{16}$/;
+        const reqCvv = /^[0-9]{3}$/;
+        let isValid = true;
+
+        if (cardName === "") {
+            setCardNameError("Please enter a name.");
+            isValid = false;
+        }
+        if (cardName.length > 0) {
+            if (!reqName.test(cardName)) {
+                setCardNameError("Please enter a valid name.");
+                isValid = false;
+            }
+        }
+        if (cardNumber === "") {
+            setCardNumberError("Please enter a 16 digit card number.");
+            isValid = false;
+        }
+        if (cardNumber.length > 0) {
+            if (!reqNumber.test(cardNumber)) {
+                setCardNumberError("Please enter a valid card number.");
+                isValid = false;
+            }
+        }
+        if (cvv === "") {
+            setCvvError("Please enter a CVV number.");
+            isValid = false;
+        }
+        if (cvv.length > 0) {
+            if (!reqCvv.test(cvv)) {
+                setCvvError("Please enter a valid CVV number.");
+                isValid = false;
+            }
+        }
+        return isValid;
+>>>>>>> 065d13bc514f0944cfe658bbdfd72108175af39c
     }
     if (cardNumber.length > 0 && !reqNumber.test(cardNumber)) {
       setCardNumberError("Please enter a valid card number.");
@@ -226,4 +294,11 @@ function CardDetails() {
   );
 }
 
+<<<<<<< HEAD
 export default CardDetails;
+=======
+export default CardDetails
+
+
+
+>>>>>>> 065d13bc514f0944cfe658bbdfd72108175af39c

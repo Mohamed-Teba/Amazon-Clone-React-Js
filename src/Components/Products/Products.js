@@ -29,6 +29,7 @@ const Products = () => {
 
   const { data } = useLoaderData();
   const productsData = data.products;
+<<<<<<< HEAD
 
   // Get current category from URL params
   const { category } = useParams();
@@ -50,6 +51,15 @@ const Products = () => {
    * handlePriceFilter
    * Toggle price range filter on/off
    */
+=======
+  const { category } = useParams();
+  const categoryProducts = category ? productsData.filter((product) => product.category.toLowerCase() === category.toLowerCase()) : productsData;
+  const uniqueCategories = Array.from(new Set(productsData.map(product => product.category)));
+  const [priceRange, setPriceRange] = useState("");
+  const [starRange, setStarRange] = useState(""); 
+  const [sortOrder, setSortOrder] = useState("default"); 
+
+>>>>>>> 065d13bc514f0944cfe658bbdfd72108175af39c
   const handlePriceFilter = (selectedRange) => {
     setPriceRange(priceRange === selectedRange ? "" : selectedRange);
   };
@@ -309,8 +319,19 @@ const Products = () => {
 
       {/* Restore scroll position on navigation */}
       <ScrollRestoration />
+<<<<<<< HEAD
     </div>
   );
 };
 
 export default Products;
+=======
+    </div >
+  )
+}
+export default Products;
+
+
+
+
+>>>>>>> 065d13bc514f0944cfe658bbdfd72108175af39c

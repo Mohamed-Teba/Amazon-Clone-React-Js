@@ -10,6 +10,7 @@ import down from './down.png';
 import facebook from './facebook.png';
 import google from './google.png';
 import logoBlack from './logoBlack.png';
+import egyptFlag from './egypt-flag.png';
 import delivery from './delivery.png';
 import delivered from './delivered.png';
 import cod from './cod.png';
@@ -33,6 +34,7 @@ export {
   facebook,
   google,
   logoBlack,
+  egyptFlag,
   delivered,
   delivery,
   cod,

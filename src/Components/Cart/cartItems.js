@@ -25,6 +25,7 @@ const CartItems = () => {
 
   const { userCart, updateUserCart, cartTotalQty, cartTotalPrice } = useCart(); // Cart context
 
+<<<<<<< HEAD
   const [totalQty, setTotalQty] = useState(0); // Total items (Redux cart)
   const [totalPrice, setTotalPrice] = useState(0); // Total price (Redux cart)
   const cartRef = useRef(null); // Ref to cart wrapper
@@ -48,6 +49,37 @@ const CartItems = () => {
         const setHeight = cartHeight + 8;
         setProductDivHeight(setHeight);
       }
+=======
+    const { userCart, updateUserCart, cartTotalQty, cartTotalPrice } = useCart();
+    const [totalQty, setTotalQty] = useState(0);
+    const [totalPrice, setTotalPrice] = useState(0);
+    const cartRef = useRef(null);
+    const [productDivHeight, setProductDivHeight] = useState(0);
+    useEffect(() => {
+        let allPrice = 0;
+        let allQty = 0;
+        products.forEach((product) => {
+            allPrice += product.quantity * product.price;
+            allQty += product.quantity;
+        });
+        setTotalPrice(allPrice);
+        setTotalQty(allQty);
+
+        const updateCartHeight = () => {
+            if (cartRef.current) {
+                const cartHeight = cartRef.current.clientHeight;
+                const setHeight = cartHeight + 8;
+                setProductDivHeight(setHeight);
+            }
+        };
+
+        updateCartHeight();
+    }, [products, userCart]);
+
+    const navigate = useNavigate();
+    const handleCategoryClick = (category, title) => {
+        navigate(`/${category}/${title}`);
+>>>>>>> 065d13bc514f0944cfe658bbdfd72108175af39c
     };
 
     updateCartHeight();

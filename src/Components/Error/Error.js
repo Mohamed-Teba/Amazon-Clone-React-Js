@@ -5,6 +5,7 @@ const ErrorPage = () => {
   // Hook to navigate programmatically (go back, forward, or to specific routes)
   const navigate = useNavigate();
 
+<<<<<<< HEAD
   useEffect(() => {
     // Set a timeout to navigate back to the previous page after 3 seconds
     const timer = setTimeout(() => navigate(-1), 3000);
@@ -25,3 +26,8 @@ const ErrorPage = () => {
 };
 
 export default ErrorPage;
+=======
+export default ErrorPage
+
+
+>>>>>>> 065d13bc514f0944cfe658bbdfd72108175af39c

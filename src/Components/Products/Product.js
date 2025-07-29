@@ -2,6 +2,7 @@
 import { Link } from 'react-router-dom';
 import { star, halfStar, emptyStar } from "../../assets/index";
 
+<<<<<<< HEAD
 // Redux hooks and actions for cart state
 import { useDispatch, useSelector } from "react-redux";
 import { addToCart } from "../../Redux/amazonSlice";
@@ -18,9 +19,12 @@ import { useCart } from "../../context/userCartContext";
  * ratings, pricing, and an Add to Cart button supporting
  * authenticated (Firestore) and guest (Redux) users.
  */
+=======
+>>>>>>> 065d13bc514f0944cfe658bbdfd72108175af39c
 const Product = (props) => {
   // Destructure productsData array from props
   const { productsData } = props;
+<<<<<<< HEAD
 
   // Redux dispatch and selectors for authentication and user info
   const dispatch = useDispatch();
@@ -35,6 +39,12 @@ const Product = (props) => {
    * Adds or updates a product entry in the Firestore cart collection
    * under users/{email}/cart/{userId}. Merges quantities if exists.
    */
+=======
+  const dispatch = useDispatch();
+  const userInfo = useSelector((state) => state.amazon.userInfo);
+  const authenticated = useSelector((state) => state.amazon.isAuthenticated);
+  const { userCart, updateUserCart } = useCart();
+>>>>>>> 065d13bc514f0944cfe658bbdfd72108175af39c
   const saveProductToFirsebase = async (product) => {
     const productWithDefaultQuantity = { ...product, quantity: 1 };
     // Reference to Firestore document for this user's cart
@@ -116,6 +126,7 @@ const Product = (props) => {
         </Link>
       </div>
 
+<<<<<<< HEAD
       {/* Product details section */}
       <div className="p-2">
         <Link to={`${product.title}`}>
@@ -164,5 +175,7 @@ const Product = (props) => {
     </div>
   ));
 };
+=======
+>>>>>>> 065d13bc514f0944cfe658bbdfd72108175af39c
 
 export default Product;

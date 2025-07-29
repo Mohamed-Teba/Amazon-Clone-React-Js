@@ -52,4 +52,11 @@ const FooterBottom = () => {
   );
 };
 
+<<<<<<< HEAD
 export default FooterBottom;
+=======
+export default FooterBottom
+
+
+
+>>>>>>> 065d13bc514f0944cfe658bbdfd72108175af39c

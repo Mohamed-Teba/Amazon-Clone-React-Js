@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useAddress } from "../../context/userAddressContext";
 
 const PaymentMethod = () => {
+<<<<<<< HEAD
   // Access the updateSelectedPayment function from the userAddress context
   const { updateSelectedPayment } = useAddress();
 
@@ -51,6 +52,26 @@ const PaymentMethod = () => {
               />
               <span className="ml-2">UPI Apps</span>
             </label>
+=======
+    const { updateSelectedPayment } = useAddress();
+    const [selectedPaymentMethod, setSelectedPaymentMethod] = useState(null);
+    const handleSelectPaymentMethod = (event) => {
+        setSelectedPaymentMethod(event.target.value);
+        updateSelectedPayment(event.target.value);
+    };
+    
+    return (
+        <div>
+            <p className="text-lg font-semibold text-red-700 mt-3">2 &nbsp; Select a Payment Method</p>
+            <div className="w-full flex justify-end">
+                <div className="w-[96%] border-[1px] border-gray-400 rounded-lg mt-1 px-4 py-3">
+                    <p className="text-lg font-semibold border-b border-gray-400">Payment methods</p>
+                    <div className="flex flex-col gap-4 mt-2 font-semibold">
+                        <label className="inline-flex items-center">
+                            <input type="radio" name="paymentMethod" value="Credit/Debit Card" onChange={handleSelectPaymentMethod} />
+                            <span className="ml-2">Credit or debit card</span>
+                        </label>
+>>>>>>> 065d13bc514f0944cfe658bbdfd72108175af39c
 
             {/* EMI option */}
             <label className="inline-flex items-center">
@@ -86,3 +107,4 @@ const PaymentMethod = () => {
 };
 
 export default PaymentMethod;
+

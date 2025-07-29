@@ -4,6 +4,7 @@ import axios from "axios";
 import { RotatingLines } from "react-loader-spinner";
 
 const Location = () => {
+<<<<<<< HEAD
   // State to track whether the location selector dropdown is visible
   const [selectedLocation, setSelectedLocation] = useState(false);
 
@@ -28,9 +29,64 @@ const Location = () => {
     if (storedLocationName && storedUserZipCode) {
       setLocationName(storedLocationName);
       setUserZipCode(storedUserZipCode);
+=======
+    const [selectedLocation, setSelectedLocation] = useState(false);
+    const [userZipCode, setUserZipCode] = useState('');
+    const [locationName, setLocationName] = useState(null);
+    const [warning, setWarning] = useState("");
+    const [autoLocationWarning, setAutoLocationWarning] = useState("")
+    const [loading, setLoading] = useState(false);
+    const [autoLocationLoading, setAutoLocationLoading] = useState(false);
+
+    useEffect(() => {
+        const storedLocationName = localStorage.getItem("locationName");
+        const storedUserZipCode = localStorage.getItem("userZipCode");
+        if (storedLocationName && storedUserZipCode) {
+            setLocationName(storedLocationName);
+            setUserZipCode(storedUserZipCode);
+        }
+    }, []);
+
+    const locationRef = useRef(null);
+    useEffect(() => {
+        document.body.addEventListener("click", (e) => {
+            if (e.target.contains(locationRef.current)) {
+                setSelectedLocation(false);
+                setWarning(false);
+                setAutoLocationWarning(false);
+            };
+        })
+    }, [locationRef])
+
+    async function fetchLocationData(userZipCode) {
+        try {
+            const response = await axios.get(`https://api.postalpincode.in/pincode/${userZipCode}`);
+            if (response.data[0].PostOffice != null) {
+                const locationCity = response.data[0].PostOffice[0].District;
+                const locationPincode = response.data[0].PostOffice[0].Pincode;
+                setLocationName(locationCity);
+                setUserZipCode(locationPincode);
+                setWarning("");
+                setLoading(false);
+                setSelectedLocation(false);
+
+                localStorage.setItem("locationName", locationCity);
+                localStorage.setItem("userZipCode", locationPincode);
+            } else {
+                setLoading(false);
+                setUserZipCode("");
+                setWarning("Location not found");
+            }
+        } catch (error) {
+            setLoading(false);
+            setUserZipCode("");
+            setWarning(error.message);
+        }
+>>>>>>> 065d13bc514f0944cfe658bbdfd72108175af39c
     }
   }, []);
 
+<<<<<<< HEAD
   // Ref for the dropdown panel, to detect outside clicks
   const locationRef = useRef(null);
 
@@ -39,6 +95,36 @@ const Location = () => {
     const handleClickOutside = (e) => {
       if (locationRef.current && !locationRef.current.contains(e.target)) {
         setSelectedLocation(false);
+=======
+    const validate = () => {
+        const reqPincode = /^[0-9]{6}$/;
+        let isValid = true;
+        if (userZipCode === "") {
+            setWarning("Please enter a ZIP or postal code.");
+            isValid = false;
+        }
+        if (userZipCode.length > 0) {
+            if (!reqPincode.test(userZipCode)) {
+                setWarning("Please enter a valid ZIP or postal code.");
+                isValid = false;
+            }
+        }
+        return isValid
+    }
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        const isValid = validate();
+        if (!isValid) {
+            return;
+        }
+        setLoading(true);
+        fetchLocationData(userZipCode);
+        setUserZipCode("");
+    }
+
+    function getLocation() {
+>>>>>>> 065d13bc514f0944cfe658bbdfd72108175af39c
         setWarning("");
         setAutoLocationWarning("");
       }
@@ -127,6 +213,7 @@ const Location = () => {
             setAutoLocationLoading(false);
             setSelectedLocation(false);
 
+<<<<<<< HEAD
             // Persist to localStorage
             localStorage.setItem("locationName", city);
             localStorage.setItem("userZipCode", pcode);
@@ -265,3 +352,7 @@ const Location = () => {
 };
 
 export default Location;
+=======
+export default Location
+
+>>>>>>> 065d13bc514f0944cfe658bbdfd72108175af39c

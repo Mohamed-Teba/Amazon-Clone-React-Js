@@ -67,3 +67,7 @@ const ProductsSlider = () => {
 };
 
 export default ProductsSlider;
+<<<<<<< HEAD
+=======
+
+>>>>>>> 065d13bc514f0944cfe658bbdfd72108175af39c

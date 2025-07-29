@@ -1,7 +1,14 @@
+<<<<<<< HEAD
 import React from "react";
 import FooterMiddlelist from "./FooterMiddlelist";
 import { middleList } from "../../constants";
 import { logo } from "../../assets";
+=======
+import React from 'react'
+import FooterMiddlelist from './FooterMiddlelist'
+import { middleList } from '../../constants'
+import { logo } from '../../assets'
+>>>>>>> 065d13bc514f0944cfe658bbdfd72108175af39c
 
 const FooterMiddle = () => {
   // Scrolls to the top of the page smoothly when "Back to top" is clicked
@@ -48,6 +55,7 @@ const FooterMiddle = () => {
             <img className="w-20 pt-3" alt="" src={logo} />
           </div>
 
+<<<<<<< HEAD
           {/* Language selector */}
           <div className="flex gap-2">
             <p className="flex gap-1 items-center justify-center rounded-sm border border-gray-500 hover:border-amazon_yellow cursor-pointer duration-200 px-2 text-sm py-1">
@@ -61,3 +69,9 @@ const FooterMiddle = () => {
 };
 
 export default FooterMiddle;
+=======
+export default FooterMiddle
+
+
+
+>>>>>>> 065d13bc514f0944cfe658bbdfd72108175af39c

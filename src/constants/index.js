@@ -50,6 +50,7 @@ export const middleList = [
           "Advertise Your Products",
           "Amazon Pay on Merchants",
         ],
+<<<<<<< HEAD
       },
     ],
   },
@@ -66,6 +67,22 @@ export const middleList = [
           "100% Purchase Protection",
           "Amazon App Download",
           "Help",
+=======
+    },
+    {
+        id:2002,
+        title:"Connect with Us",
+        listItem:[
+            {
+                id:"002",
+                listData: [
+                    "Facebook",                    
+                    "X",                     
+                    "Instagram"
+                ],
+
+            },
+>>>>>>> 065d13bc514f0944cfe658bbdfd72108175af39c
         ],
       },
     ],

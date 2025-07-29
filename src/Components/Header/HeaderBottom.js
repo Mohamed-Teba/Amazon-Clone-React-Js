@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { useRef, useEffect, useState } from "react";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
@@ -14,6 +15,18 @@ import {
   resetReturnOrders,
   resetOrders,
 } from "../../Redux/amazonSlice";
+=======
+import { useRef, useEffect, useState } from 'react'
+import MenuIcon from '@mui/icons-material/Menu';
+import CloseIcon from '@mui/icons-material/Close';
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import { motion } from 'framer-motion';
+import { useSelector, useDispatch } from 'react-redux';
+import { Link } from 'react-router-dom';
+import { getAuth, signOut } from 'firebase/auth';
+import { useLoaderData } from 'react-router-dom';
+import { setUserAuthentication, userSignOut, resetCancelOrders, resetReturnOrders, resetOrders} from '../../Redux/amazonSlice';
+>>>>>>> 065d13bc514f0944cfe658bbdfd72108175af39c
 
 const HeaderBottom = () => {
   const auth = getAuth();
@@ -49,6 +62,7 @@ const HeaderBottom = () => {
   return (
     <div className="w-full mt-28 mdl:mt-16 px-2 h-[36px] bg-amazon_light text-white flex items-center">
       {/* Items start  */}
+<<<<<<< HEAD
       <ul className="flex items-center gap-2 mdl:text-sm tracking-wide xs:text-xs capitalize">
         <li
           ref={ref}
@@ -70,6 +84,14 @@ const HeaderBottom = () => {
         <li className="headerHover h-8 mt-1">
           <Link to="/Smartphones">mobiles</Link>
         </li>
+=======
+      <ul className='flex items-center gap-2 mdl:text-sm tracking-wide xs:text-xs capitalize'>
+        <li ref={ref} onClick={() => setSideBar(true)} className='headerHover h-8 mt-1 flex items-center gap-1'><MenuIcon />All</li>
+        <li className='headerHover h-8 mt-1'><Link to="/home-decoration" >home-decoration</Link></li>
+        <li className='headerHover h-8 mt-1'><Link to="/womens-jewellery" >jewellery</Link></li>
+        <li className='headerHover h-8 mt-1'><Link to="/laptops" >laptops</Link></li>
+        <li className='headerHover h-8 mt-1'><Link to="/Smartphones" >mobiles</Link></li>
+>>>>>>> 065d13bc514f0944cfe658bbdfd72108175af39c
       </ul>
       {/* items end  */}
       {/* SideNavContent Start  */}
@@ -142,4 +164,9 @@ const HeaderBottom = () => {
   );
 };
 
+<<<<<<< HEAD
 export default HeaderBottom;
+=======
+export default HeaderBottom
+
+>>>>>>> 065d13bc514f0944cfe658bbdfd72108175af39c

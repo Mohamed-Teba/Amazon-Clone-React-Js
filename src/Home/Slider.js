@@ -56,3 +56,7 @@ function Slider({ images }) {
   );
 }
 export default Slider;
+<<<<<<< HEAD
+=======
+
+>>>>>>> 065d13bc514f0944cfe658bbdfd72108175af39c

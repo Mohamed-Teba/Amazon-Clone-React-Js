@@ -32,13 +32,17 @@ import { useCart } from "../../context/userCartContext";
  */
 const ProductDetails = () => {
   const dispatch = useDispatch();
+<<<<<<< HEAD
 
   // Authentication state and user info from Redux store
+=======
+>>>>>>> 065d13bc514f0944cfe658bbdfd72108175af39c
   const authenticated = useSelector((state) => state.amazon.isAuthenticated);
   const userInfo = useSelector((state) => state.amazon.userInfo);
 
   // Local state to toggle 'Go to Cart' button after adding
   const [cartButton, setCartButton] = useState(false);
+<<<<<<< HEAD
 
   // Load data provided by React Router loader
   const data = useLoaderData();
@@ -50,6 +54,13 @@ const ProductDetails = () => {
   const product = productsData.find((product) => product.title === title);
 
   // Carousel: current image index and auto-rotation effect
+=======
+  const data = useLoaderData(); 
+  const productsData = data.data.products; 
+  const { title } = useParams();
+  const product = productsData.find((product) =>
+    product.title === title);
+>>>>>>> 065d13bc514f0944cfe658bbdfd72108175af39c
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   useEffect(() => {
     const interval = setInterval(() => {
