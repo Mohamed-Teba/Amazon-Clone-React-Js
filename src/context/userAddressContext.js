@@ -1,60 +1,106 @@
-import React, { createContext, useContext, useState, useEffect } from 'react';
+import React, { createContext, useContext, useState, useEffect } from "react";
 import { collection, doc, getDoc } from "firebase/firestore";
 import { db } from "../firebase.config";
-import { useSelector } from 'react-redux';
+import { useSelector } from "react-redux";
 
+// Create context for user address management
 const UserAddressContext = createContext();
 
+/**
+ * UserAddressProvider
+ * Wraps application and provides user address data, selected address,
+ * and payment method state to child components via context.
+ */
 export const UserAddressProvider = ({ children }) => {
-    const [userAddress, setUserAddress] = useState([]);
+  // State to store list of user addresses from Firestore
+  const [userAddress, setUserAddress] = useState([]);
 
-    const userInfo = useSelector((state) => state.amazon.userInfo);
-    const authenticated = useSelector((state) => state.amazon.isAuthenticated);
+  // Get authentication status and user info from Redux store
+  const userInfo = useSelector((state) => state.amazon.userInfo);
+  const authenticated = useSelector((state) => state.amazon.isAuthenticated);
 
-    const updateUserAddress = (updatedAddress) => {
-        setUserAddress(updatedAddress);
-    };
+  /**
+   * updateUserAddress
+   * Allows components to update userAddress state manually
+   */
+  const updateUserAddress = (updatedAddress) => {
+    setUserAddress(updatedAddress);
+  };
 
-    useEffect(() => {
-        if (authenticated && userInfo) {
-            const getuserAddressesFromFirebase = async (userInfo) => {
-                try {
-                    const userAddressesRef = doc(collection(db, 'users', userInfo.email, 'shippingAddresses'), userInfo.id);
+  /**
+   * Fetch user shipping addresses from Firestore when authenticated
+   * on change of authenticated or userInfo.
+   */
+  useEffect(() => {
+    if (authenticated && userInfo) {
+      const getuserAddressesFromFirebase = async (userInfo) => {
+        try {
+          // Reference to the user's addresses document
+          const userAddressesRef = doc(
+            collection(db, "users", userInfo.email, "shippingAddresses"),
+            userInfo.id
+          );
 
-                    const docSnapshot = await getDoc(userAddressesRef);
+          const docSnapshot = await getDoc(userAddressesRef);
 
-                    if (docSnapshot.exists()) {
-                        setUserAddress(docSnapshot.data().Addresses);
-                    }
-                } catch (error) {
-                    console.error('Error fetching user address data:', error);
-                }
-            };
-            getuserAddressesFromFirebase(userInfo);
-        } else {
-            setUserAddress([]);
+          // If document exists, update userAddress state
+          if (docSnapshot.exists()) {
+            setUserAddress(docSnapshot.data().Addresses);
+          }
+        } catch (error) {
+          console.error("Error fetching user address data:", error);
         }
-    }, [authenticated, userInfo]);
+      };
+      getuserAddressesFromFirebase(userInfo);
+    } else {
+      // Clear addresses if not authenticated
+      setUserAddress([]);
+    }
+  }, [authenticated, userInfo]);
 
-    const [selectedAddress, setSelectedAddress] = useState(null);
+  // State for currently selected shipping address
+  const [selectedAddress, setSelectedAddress] = useState(null);
 
-    const updateSelectedAddress = (updatedSelectedAddress) => {
-        setSelectedAddress(updatedSelectedAddress);
-    };
+  /**
+   * updateSelectedAddress
+   * Allows components to change selected shipping address
+   */
+  const updateSelectedAddress = (updatedSelectedAddress) => {
+    setSelectedAddress(updatedSelectedAddress);
+  };
 
-    const [selectedPayment, setSelectedPayment] = useState("");
+  // State for selected payment method (e.g., card, COD)
+  const [selectedPayment, setSelectedPayment] = useState("");
 
-    const updateSelectedPayment = (updatedSelectedPayment) => {
-        setSelectedPayment(updatedSelectedPayment);
-    };
+  /**
+   * updateSelectedPayment
+   * Allows components to set the payment method for checkout
+   */
+  const updateSelectedPayment = (updatedSelectedPayment) => {
+    setSelectedPayment(updatedSelectedPayment);
+  };
 
-    return (
-        <UserAddressContext.Provider value={{ userAddress, updateUserAddress, selectedAddress, updateSelectedAddress, selectedPayment, updateSelectedPayment }}>
-            {children}
-        </UserAddressContext.Provider>
-    );
-}
+  // Provide address and payment context to descendants
+  return (
+    <UserAddressContext.Provider
+      value={{
+        userAddress,
+        updateUserAddress,
+        selectedAddress,
+        updateSelectedAddress,
+        selectedPayment,
+        updateSelectedPayment,
+      }}
+    >
+      {children}
+    </UserAddressContext.Provider>
+  );
+};
 
+/**
+ * useAddress
+ * Custom hook to access UserAddressContext values in components
+ */
 export const useAddress = () => {
-    return useContext(UserAddressContext);
+  return useContext(UserAddressContext);
 };
