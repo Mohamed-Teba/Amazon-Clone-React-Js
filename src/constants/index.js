@@ -121,6 +121,7 @@ export const BottomList = [
 ];
 
 export const categoryData = [
+
   {
     id: "01",
     plot: "Up to 70% off | Styles for men",
@@ -275,6 +276,140 @@ export const countryList = [
   "United Kingdom",
   "United States",
 ];
+=======
+    {
+      id: "01",
+      plot: "Up to 70% off | Styles for men",
+      title: "Men's Clothing",
+      category: "mens-shirts",
+      img: "https://m.media-amazon.com/images/G/31/img18/Fashion/September18/Flyouts/Men.jpg",
+    },
+    {
+      id: "02",
+      plot: "Up to 70% off | Styles for women",
+      subcategories: [
+        {
+          title: "Clothing",
+          category: "womens-dresses",
+          img: "https://m.media-amazon.com/images/G/31/img19/Fashion/WA19/MAX/FLY_OUT/Sub-Nav-Women-2._CB439603748_.jpg",
+        },
+        {
+          title: "Footwear",
+          category: "womens-shoes",
+          img: "https://m.media-amazon.com/images/I/31qvgC-l0XL._AC_UF226,226_FMjpg_.jpg",
+        },
+        {
+          title: "HandBags",
+          category: "womens-bags",
+          img: "https://m.media-amazon.com/images/I/61g8tLRaU9L._AC_UF226,226_FMjpg_.jpg",
+        },
+        {
+          title: "Watches",
+          category: "womens-watches",
+          img: "https://m.media-amazon.com/images/I/5159txtY55L._AC_SY120_.jpg",
+        },
+      ]
+    },
+    {
+      id: "03",
+      plot: "Time is Precious, Wear It Well.",
+      title: "Men's Watches",
+      category: "mens-watches",
+      img: "https://cdn.dummyjson.com/product-images/mens-watches/longines-master-collection/thumbnail.webp",
+    },
+    {
+      id: "04",
+      plot: "We Make Technology Affordable.",
+      subcategories: [
+        {
+          title: "Smart Phones",
+          category: "smartphones",
+          img: "https://m.media-amazon.com/images/I/71ZDY57yTQL._AC_UY218_.jpg",
+        },
+        {
+          title: "Laptops",
+          category: "laptops",
+          img: "https://m.media-amazon.com/images/I/81o11eS8pLL._AC_UL320_.jpg",
+        },
+        {
+          title: "Vehicle",
+          category: "vehicle",
+          img: "https://cdn.dummyjson.com/product-images/vehicle/durango-sxt-rwd/thumbnail.webp",
+        },
+        {
+          title: "Mobile Accessories",
+          category: "mobile-accessories",
+          img: "https://cdn.dummyjson.com/product-images/mobile-accessories/apple-airpods/thumbnail.webp",
+        },
+      ]
+    },
+    {
+      id: "05",
+      plot: "The Best Jewellry Under One Roof.",
+      title: "Jewellary",
+      category: "womens-jewellery",
+      img: "https://m.media-amazon.com/images/I/612E8Vgbd9L._AC_UL400_.jpg",
+    },
+    {
+      id: "06",
+      plot: "Make Your Home Significantly Better.",
+      subcategories: [
+        {
+          title: "Home-Decoration",
+          category: "home-decoration",
+          img: "https://cdn.dummyjson.com/product-images/home-decoration/plant-pot/thumbnail.webp",
+        },
+        {
+          title: "Furniture",
+          category: "furniture",
+          img: "https://cdn.dummyjson.com/product-images/furniture/annibale-colombo-sofa/thumbnail.webp",
+        },
+        {
+          title: "Motorcycle",
+          category: "motorcycle",
+          img: "https://cdn.dummyjson.com/product-images/motorcycle/kawasaki-z800/thumbnail.webp",
+        },
+        {
+          title: "Groceries",
+          category: "groceries",
+          img: "https://m.media-amazon.com/images/I/71TIju5KrHL._AC_UL400_.jpg",
+        },
+      ]
+    },
+    {
+      id: "07",
+      plot: "Your Feet Will Never Look the Same Again.",
+      title: "Men's Footwear",
+      category: "mens-shoes",
+      img: "https://m.media-amazon.com/images/G/31/img21/shoes/2023/SS23/Newlaunch/Columbia._CB589992930_.jpg",
+    },
+    {
+      id: "08",
+      plot: "Stay Shady, Stay Cool and Fragrances Are Divine.",
+      subcategories: [
+        {
+          title: "Sunglasses",
+          category: "sunglasses",
+          img: "https://m.media-amazon.com/images/I/41lQQB4fA0L._AC_UL400_.jpg",
+        },
+        {
+          title: "Fragrances",
+          category: "fragrances",
+          img: "https://cdn.dummyjson.com/product-images/fragrances/gucci-bloom-eau-de/thumbnail.webp",
+        },
+        {
+          title: "beauty",
+          category: "beauty",
+          img: "https://cdn.dummyjson.com/product-images/beauty/eyeshadow-palette-with-mirror/thumbnail.webp",
+        },
+        {
+          title: "Tops",
+          category: "tops",
+          img: "https://cdn.dummyjson.com/product-images/tops/blue-frock/thumbnail.webp",
+        },
+      ]
+    },
+  ];
 
 export const states = [
   "Andaman and Nicobar Islands",
@@ -315,6 +450,7 @@ export const states = [
   "West Bengal",
 ];
 
+
 export const months = [
   "01",
   "02",
@@ -329,6 +465,16 @@ export const months = [
   "11",
   "12",
 ];
+=======
+  export const countryList = [
+    "Australia", "Brazil", "Canada", "China", "France", "Germany","India", "Italy", "Japan", "Mexico", "Netherlands", "Poland", "Singapore", "Spain",
+    "Turkey", "United Arab Emirates", "United Kingdom", "United States",
+  ];
+  
+  export const states =[
+    "Andaman and Nicobar Islands","Andhra Pradesh","Arunachal Pradesh","Assam","Bihar","Chandigarh","Chhattisgarh","Dadra and Nagar Haveli and Daman & Diu","Delhi","Goa","Gujarat","Haryana","Himachal Pradesh","Jammu & Kashmir","Jharkhand","Karnataka",
+    "Kerala","Ladakh","Lakshadweep","Madhya Pradesh","Maharashtra","Manipur","Meghalaya","Mizoram","Nagaland","Odisha","Puducherry","Punjab","Rajasthan","Sikkim","Tamil Nadu","Telangana","Tripura","Uttarakhand","Uttar Pradesh","West Bengal"
+  ];
 
 export const years = [
   "2023",

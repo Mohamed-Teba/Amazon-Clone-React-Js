@@ -1,12 +1,6 @@
-import React, { useState, useRef, useEffect } from "react";
-import {
-  ScrollRestoration,
-  useLoaderData,
-  useNavigate,
-  Link,
-  useParams,
-} from "react-router-dom";
-// Star icon used for rating filters
+
+import { useState, useRef, useEffect } from 'react';
+import { ScrollRestoration, useLoaderData, useNavigate, Link } from 'react-router-dom';
 import { star } from "../../assets/index";
 // Reusable Product card component
 import Product from "./Product";
@@ -33,16 +27,14 @@ const Products = () => {
     navigate(`/${category}`);
   };
 
-  // Load products data from route loader
-  const data = useLoaderData();
-  const productsData = data.data.products;
+  const { data } = useLoaderData();
+  const productsData = data.products;
 
   // Get current category from URL params
   const { category } = useParams();
-  // Filter products by category if provided
-  const categoryProducts = category
-    ? productsData.filter((product) => product.category === category)
-    : productsData;
+
+
+  const categoryProducts = category ? productsData.filter((product) => product.category.toLowerCase() === category.toLowerCase()) : productsData;
 
   // Extract unique categories for sidebar
   const uniqueCategories = Array.from(

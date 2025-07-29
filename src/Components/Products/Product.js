@@ -1,6 +1,5 @@
-import React from "react";
-import { Link } from "react-router-dom";
-// Asset imports for rating stars
+
+import { Link } from 'react-router-dom';
 import { star, halfStar, emptyStar } from "../../assets/index";
 
 // Redux hooks and actions for cart state
