@@ -9,7 +9,6 @@ import UserAddresses from './userAddresses';
 import PaymentMethod from './paymentMethod';
 import OrderSummary from './OrderSummary';
 
-
 const Checkout = () => {
   const dispatch = useDispatch();
   const { userAddress } = useAddress();
@@ -60,3 +59,6 @@ const Checkout = () => {
 }
 
 export default Checkout;
+
+
+
