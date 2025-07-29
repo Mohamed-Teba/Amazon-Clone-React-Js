@@ -1,6 +1,3 @@
-ده ملف README.md احترافي وطويل، معدل وشيك جدًا زي ما طلبت، تقدر تستخدمه مباشرة:
-
-
 # 🛒 Amazon Clone (React JS + Firebase + Stripe)
 
 A full-stack Amazon.com clone developed with React JS, Firebase backend, and Stripe payments. Focuses on real-world e-commerce features and a modern, smooth UI.
@@ -57,15 +54,15 @@ A full-stack Amazon.com clone developed with React JS, Firebase backend, and Str
 ### 📦 Key Packages
 
 
-"react": "^18.2.0",
-"firebase": "^10.1.0",
-"@reduxjs/toolkit": "^1.9.5",
-"react-router-dom": "^6.14.2",
-"axios": "^1.4.0",
-"@stripe/react-stripe-js": "^2.2.0",
-"@mui/material": "^5.14.0",
-"tailwindcss": "^3.3.3",
-"framer-motion": "^10.12.22"
+- "react": "^18.2.0"
+- "firebase": "^10.1.0"
+- "@reduxjs/toolkit": "^1.9.5"
+- "react-router-dom": "^6.14.2"
+- "axios": "^1.4.0"
+- "@stripe/react-stripe-js": "^2.2.0"
+- "@mui/material": "^5.14.0"
+- "tailwindcss": "^3.3.3"
+- "framer-motion": "^10.12.22"
 
 
 ---
