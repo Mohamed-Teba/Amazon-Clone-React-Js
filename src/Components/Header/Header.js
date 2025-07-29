@@ -85,8 +85,8 @@ const Header = () => {
                         </p>
                         {
                             showSignin &&
-                            <div className='w-full h-screen text-black fixed top-16 left-0 bg-amazon_blue bg-opacity-50 flex justify-end'>
-                                <div className='w-full absolute left-[40%] md:left-[45%] lgl:left-[60%]'>
+                            <div className='w-full h-screen text-black fixed z-30 top-16 left-0 bg-amazon_blue bg-opacity-50 flex justify-end'>
+                                <div className='w-full absolute left-[5%] sml:left-[20%] md:left-[45%] lgl:left-[60%]'>
                                     {
                                         userInfo ?
                                             <div onMouseLeave={() => setShowSignin(false)} onClick={(e) => e.preventDefault()} className='mdl:w-[50%] lgl:w-[32%] sml:w-[50%] mr-10 rounded-sm h-[96] overflow-hidden -mt-2 bg-white border border-transparent '>

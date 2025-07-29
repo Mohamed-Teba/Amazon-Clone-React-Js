@@ -53,10 +53,10 @@ const Search = () => {
     }, [allCategoryRef, showAll, searchRef, showSearch, searchInput,handleSearch]);
 
     return (
-        <div className="h-10 rounded-sm flex flex-grow relative ml-4 text-black" >
+        <div className="z-10 h-10 rounded-sm flex flex-grow relative ml-4 text-black" >
             <span onClick={() => setShowAll(!showAll)} ref={allCategoryRef}
                 className="w-14 pl-2 h-full flex items-center justify-center text-xs text-amazon_black cursor-pointer
-                      bg-gray-100 hover:bg-gray-300 rounded-tl-md rounded-bl-md duration-300 border-r-[1px] border-gray-300"
+                    bg-gray-100 hover:bg-gray-300 rounded-tl-md rounded-bl-md duration-300 border-r-[1px] border-gray-300"
             >All
                 <span>
                     <ArrowDropDownIcon />
