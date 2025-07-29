@@ -7,11 +7,8 @@ import { db } from "../../firebase.config";
 import { useSelector } from "react-redux";
 import { useAddress } from '../../context/userAddressContext';
 
-
 const AddressForm = ({ setShowAddressForm }) => {
-
     const userInfo = useSelector((state) => state.amazon.userInfo);
-
     const { updateUserAddress } = useAddress();
 
     const [nameInput, setNameInput] = useState("");
@@ -281,3 +278,7 @@ const AddressForm = ({ setShowAddressForm }) => {
 }
 
 export default AddressForm;
+
+
+
+
