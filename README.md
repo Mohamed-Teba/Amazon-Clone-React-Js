@@ -63,6 +63,7 @@ The application is modular, built with reusable React components for maintainabi
 
 Track the development progress, tasks, and component details on our **Notion workspace**:  
 👉 [Notion Project Board](https://www.notion.so/Amazon-Clone-Project-Tracker-1234567890abcdef)  
+
 The Notion board includes:
 - Task assignments for each component (Header, Footer, Products, etc.).
 - Development timelines and milestones.
@@ -81,7 +82,7 @@ The Amazon Clone is built with a modern, industry-standard tech stack to ensure 
 | **State Management** | Redux Toolkit (1.9.5), Redux Persist          |
 | **Backend**          | Firebase Auth (10.1.0), Firestore             |
 | **Styling**          | Tailwind CSS (3.3.3), Material-UI (5.14.0)    |
-| **Payments**         | Stripe (@stripe/react-stripe-js 2.2.0)        |
+| **Payments**         | Stripe (stripe/react-stripe-js 2.2.0)        |
 | **API Requests**     | Axios (1.4.0)                                 |
 | **Animations**       | Framer Motion (10.12.22)                      |
 
@@ -133,10 +134,6 @@ Follow these steps to set up and run the Amazon Clone locally on your machine.
 2. **Install Dependencies**:
    ```bash
    npm install
-   ```
-   or
-   ```bash
-   yarn install
    ```
 
 3. **Set Up Environment Variables**:
