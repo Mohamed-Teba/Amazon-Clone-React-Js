@@ -1,13 +1,13 @@
-import React, { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import ArrowDropDownOutlinedIcon from '@mui/icons-material/ArrowDropDownOutlined';
 import { logo } from "../../assets/index"
+import { egyptFlag } from '../../assets/index';
 import { Link } from 'react-router-dom';
 import { setUserAuthentication, userSignOut, resetOrders, resetCancelOrders, resetReturnOrders } from '../../Redux/amazonSlice';
 import { getAuth, signOut } from 'firebase/auth';
 import { useDispatch, useSelector } from 'react-redux';
-import Pincode from './Pincode';
 import { useLoaderData } from 'react-router-dom';
 import SignInoptions from './SignInoptions';
 import { useCart } from '../../context/userCartContext';
@@ -64,9 +64,6 @@ const Header = () => {
                     </div>
                 </Link>
                 {/* amazon_logo end */}
-                {/* Address Start  */}
-                <Pincode />
-                {/* Address End */}
                 {/* search start  */}
                 <div className='w-[45%] hidden mdl:block'>
                     <Search />
@@ -74,7 +71,7 @@ const Header = () => {
                 {/* search end  */}
                 {/* Language Start */}
                 <div className='headerHover hidden lgl:inline-flex'>
-                    <p className='flex'><img src='https://cdn-icons-png.flaticon.com/128/206/206606.png' alt='flag' className='w-[18px] mt-2 h-6' />
+                    <p className='flex'><img src={egyptFlag} alt='flag' className='w-[18px] mt-2 h-6' />
                         <span className='pl-1 pt-[11px] font-bold text-sm'>EN</span>
                         <span className='pt-2'><ArrowDropDownIcon /></span></p>
                 </div>

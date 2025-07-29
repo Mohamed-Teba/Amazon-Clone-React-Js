@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState } from 'react'
+import { useRef, useEffect, useState } from 'react'
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
@@ -46,13 +46,12 @@ const HeaderBottom = () => {
   return (
     <div className='w-full mt-28 mdl:mt-16 px-2 h-[36px] bg-amazon_light text-white flex items-center'>
       {/* Items start  */}
-      <ul className='flex items-center gap-2 mdl:text-sm tracking-wide xs:text-xs'>
+      <ul className='flex items-center gap-2 mdl:text-sm tracking-wide xs:text-xs capitalize'>
         <li ref={ref} onClick={() => setSideBar(true)} className='headerHover h-8 mt-1 flex items-center gap-1'><MenuIcon />All</li>
-        <li className='headerHover h-8 mt-1'>Amazon miniTV</li>
-        <li className='headerHover h-8 mt-1'>Sell</li>
-        <li className='headerHover h-8 mt-1'>Best Seller</li>
-        <li className='headerHover h-8 mt-1'>Today's Deals</li>
-        <Link to="/Smartphones" ><li className='headerHover h-8 mt-1'>Mobiles</li></Link>
+        <li className='headerHover h-8 mt-1'><Link to="/home-decoration" >home-decoration</Link></li>
+        <li className='headerHover h-8 mt-1'><Link to="/womens-jewellery" >jewellery</Link></li>
+        <li className='headerHover h-8 mt-1'><Link to="/laptops" >laptops</Link></li>
+        <li className='headerHover h-8 mt-1'><Link to="/Smartphones" >mobiles</Link></li>
       </ul>
       {/* items end  */}
       {/* SideNavContent Start  */}

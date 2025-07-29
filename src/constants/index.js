@@ -40,7 +40,7 @@ export const middleList=[
                 id:"002",
                 listData: [
                     "Facebook",                    
-                    "Twitter",                     
+                    "X",                     
                     "Instagram"
                 ],
 
