@@ -153,10 +153,7 @@ Follow these steps to set up and run the Amazon Clone locally on your machine.
    ```bash
    npm start
    ```
-   or
-   ```bash
-   yarn start
-   ```
+
    The app will run at `http://localhost:3000`.
 
 5. **Stripe Integration**:
