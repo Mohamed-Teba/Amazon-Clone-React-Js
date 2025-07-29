@@ -9,7 +9,6 @@ import { getAuth, signOut } from 'firebase/auth';
 import { useLoaderData } from 'react-router-dom';
 import { setUserAuthentication, userSignOut, resetCancelOrders, resetReturnOrders, resetOrders} from '../../Redux/amazonSlice';
 
-
 const HeaderBottom = () => {
   const auth = getAuth();
   const dispatch = useDispatch();
@@ -102,3 +101,4 @@ const HeaderBottom = () => {
 }
 
 export default HeaderBottom
+
