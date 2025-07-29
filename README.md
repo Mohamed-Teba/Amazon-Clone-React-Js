@@ -6,9 +6,8 @@ Welcome to the **Amazon Clone**, a full-stack e-commerce platform meticulously c
 
 ## 🔥 Live Demo
 
-Experience the app in action! Browse products, add to cart, and simulate payments in a fully functional e-commerce environment.
-
-👉 [Explore the Live Website](https://mohamed-teba.github.io/Amazon-Clone-React-Js/)  
+Experience the app in action! Browse products, add to cart, and simulate payments in a fully functional e-commerce environment:
+- 👉 [Explore the Live Website](https://mohamed-teba.github.io/Amazon-Clone-React-Js/)  
 
 ---
 
@@ -74,7 +73,7 @@ The application is modular, built with reusable React components for maintainabi
 ## 📋 Project Management
 
 Track the development progress, tasks, and component details on our **Notion workspace**:  
-👉 [Notion Project Board](https://www.notion.so/Amazon-Clone-Project-Tracker-1234567890abcdef)  
+- 👉 [Notion Project Board](https://www.notion.so/Amazon-Clone-Project-Tracker-1234567890abcdef)  
 
 The Notion board includes:
 - Task assignments for each component (Header, Footer, Products, etc.).
