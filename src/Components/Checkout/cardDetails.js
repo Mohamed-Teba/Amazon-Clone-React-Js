@@ -6,14 +6,12 @@ import { useSelector } from 'react-redux';
 import { useCart } from '../../context/userCartContext';
 
 function CardDetails() {
-
     const product = useSelector((state) => state.amazon.buyNowProduct);
     if (product) {
         var productQty = product.quantity;
         var productPrice = product.price;
         var productTotalPrice = productPrice * productQty;
     }
-
     
     const { cartTotalPrice } = useCart();
 
@@ -23,7 +21,6 @@ function CardDetails() {
     }
 
     const orderPrice = product ? (productTotalPrice + deliveryCharges) : (cartTotalPrice + deliveryCharges)
-
     const [cardNumber, setCardNumber] = useState('');
     const [cardName, setCardName] = useState('');
     const [cardExpiryMonth, setCardExpiryMonth] = useState('');
@@ -177,3 +174,6 @@ function CardDetails() {
 }
 
 export default CardDetails
+
+
+
