@@ -4,9 +4,8 @@ import axios from "axios";
 import { RotatingLines } from "react-loader-spinner";
 
 const Location = () => {
-
     const [selectedLocation, setSelectedLocation] = useState(false);
-    const [userZipCode, setUserZipCode] = useState(''); // State for the user's entered ZIP code
+    const [userZipCode, setUserZipCode] = useState('');
     const [locationName, setLocationName] = useState(null);
     const [warning, setWarning] = useState("");
     const [autoLocationWarning, setAutoLocationWarning] = useState("")
@@ -14,7 +13,6 @@ const Location = () => {
     const [autoLocationLoading, setAutoLocationLoading] = useState(false);
 
     useEffect(() => {
-        // Check local storage for existing values and set them in state
         const storedLocationName = localStorage.getItem("locationName");
         const storedUserZipCode = localStorage.getItem("userZipCode");
         if (storedLocationName && storedUserZipCode) {
@@ -23,10 +21,7 @@ const Location = () => {
         }
     }, []);
 
-    // Ref for the location dropdown
     const locationRef = useRef(null);
-
-    // Effect to close the location when clicking outside
     useEffect(() => {
         document.body.addEventListener("click", (e) => {
             if (e.target.contains(locationRef.current)) {
@@ -37,7 +32,6 @@ const Location = () => {
         })
     }, [locationRef])
 
-    // Fetch location data from API based on user's ZIP code
     async function fetchLocationData(userZipCode) {
         try {
             const response = await axios.get(`https://api.postalpincode.in/pincode/${userZipCode}`);
@@ -50,7 +44,6 @@ const Location = () => {
                 setLoading(false);
                 setSelectedLocation(false);
 
-                // Store the values in local storage
                 localStorage.setItem("locationName", locationCity);
                 localStorage.setItem("userZipCode", locationPincode);
             } else {
@@ -65,16 +58,13 @@ const Location = () => {
         }
     }
 
-    // function to validate the userZipCode
     const validate = () => {
         const reqPincode = /^[0-9]{6}$/;
         let isValid = true;
-        // Validate pincode - 1
         if (userZipCode === "") {
             setWarning("Please enter a ZIP or postal code.");
             isValid = false;
         }
-        // Validate pincode - 2
         if (userZipCode.length > 0) {
             if (!reqPincode.test(userZipCode)) {
                 setWarning("Please enter a valid ZIP or postal code.");
@@ -84,7 +74,6 @@ const Location = () => {
         return isValid
     }
 
-    //   Handle form submission
     const handleSubmit = async (e) => {
         e.preventDefault();
         const isValid = validate();
@@ -96,7 +85,6 @@ const Location = () => {
         setUserZipCode("");
     }
 
-    // function to auto detect your location
     function getLocation() {
         setWarning("");
         setAutoLocationWarning("");
@@ -212,3 +200,4 @@ const Location = () => {
 }
 
 export default Location
+
