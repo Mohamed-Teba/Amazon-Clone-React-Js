@@ -7,7 +7,7 @@ Welcome to the **Amazon Clone**, a full-stack e-commerce platform meticulously c
 ## 🔥 Live Demo
 
 👉 [Explore the Live Website](https://mohamed-teba.github.io/Amazon-Clone-React-Js/)  
-   Experience the app in action! Browse products, add to cart, and simulate payments in a fully functional e-commerce environment.
+    Experience the app in action! Browse products, add to cart, and simulate payments in a fully functional e-commerce environment.
 
 ---
 
@@ -16,7 +16,6 @@ Welcome to the **Amazon Clone**, a full-stack e-commerce platform meticulously c
 This Amazon Clone is packed with real-world e-commerce features to provide an authentic shopping experience:
 
 - 🔐 **User Authentication**: Secure sign-up and login using **Firebase Authentication** (Email/Password). Forgot password and profile management included.  
-  *See the [Registration Form](#) for a preview of the signup experience.*
 - 🛍 **Product Listings**: Dynamic product catalog with advanced filtering (by category, price, or ratings) and search functionality.
 - 🛒 **Shopping Cart**: Add, remove, or update quantities in the cart with real-time updates and total price calculations.
 - ❤️ **Wishlist**: Save favorite items for future purchases (feature in active development).
@@ -43,7 +42,6 @@ The application is modular, built with reusable React components for maintainabi
 - **Login/Signup**: 
   - User-friendly forms for registration and login with Firebase Authentication.
   - Includes input validation and error handling for a smooth UX.  
-    *Preview the [Registration Form](#) to see the signup UI.*
 - **Products**: 
   - Dynamic product grid with search, filters, and sorting options.
   - Clicking a product opens a modal with detailed information (images, description, price, reviews).
