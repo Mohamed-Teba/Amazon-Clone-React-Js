@@ -7,7 +7,6 @@ import { useNavigate,useLoaderData } from "react-router-dom";
 
 
 const Search = () => {
-
     const allCategoryRef = useRef(null);// Ref for the "All Categories" dropdown
     const [showAll, setShowAll] = useState(false);
     const searchRef = useRef(null);// Ref for the Search dropdown
@@ -35,7 +34,6 @@ const Search = () => {
         };
     }, [searchInput]);
     
-    // Effect to close the "All Categories or Search" dropdown when clicking outside
     useEffect(() => {
         document.body.addEventListener("click", (e) => {
             if (allCategoryRef.current && !allCategoryRef.current.contains(e.target)) {
@@ -46,7 +44,6 @@ const Search = () => {
                 setSearchResults([]);
             }
         })
-        // fetch results when searchInput.length > 2
         if (searchInput.length > 2) {
             handleSearch();
         }
@@ -120,7 +117,6 @@ const Search = () => {
 }
 
 export default Search;
-
 
 // import React, { useEffect, useState } from "react";
 // import { useRef } from "react";
