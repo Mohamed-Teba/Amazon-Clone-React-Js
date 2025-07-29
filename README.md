@@ -21,8 +21,6 @@ This Amazon Clone is packed with real-world e-commerce features to provide an au
     - Dynamic product catalog with advanced filtering (by category, price, or ratings) and search functionality.
 - 🛒 **Shopping Cart**:
     - Add, remove, or update quantities in the cart with real-time updates and total price calculations.
-- ❤️ **Wishlist**:
-    - Save favorite items for future purchases (feature in active development).
 - 💳 **Stripe Payment Gateway**:
     - Secure and seamless checkout flow using **Stripe** in test mode for realistic payment simulation.
 - 🧾 **Order History**:
