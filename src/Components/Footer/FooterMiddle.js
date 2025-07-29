@@ -3,7 +3,6 @@ import FooterMiddlelist from './FooterMiddlelist'
 import { middleList } from '../../constants'
 import { logo } from '../../assets'
 
-
 const FooterMiddle = () => {
     const scrollToTop = () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -45,3 +44,6 @@ const FooterMiddle = () => {
 }
 
 export default FooterMiddle
+
+
+
