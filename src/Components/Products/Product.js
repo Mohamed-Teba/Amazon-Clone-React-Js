@@ -7,16 +7,12 @@ import { collection, doc, setDoc, getDoc } from 'firebase/firestore';
 import { useCart } from '../../context/userCartContext';
 
 
-
 const Product = (props) => {
   const { productsData } = props;
-
   const dispatch = useDispatch();
   const userInfo = useSelector((state) => state.amazon.userInfo);
   const authenticated = useSelector((state) => state.amazon.isAuthenticated);
-
   const { userCart, updateUserCart } = useCart();
-
   const saveProductToFirsebase = async (product) => {
     const productWithDefaultQuantity = {
       ...product,
