@@ -90,9 +90,9 @@ const Header = () => {
                                     {
                                         userInfo ?
                                             <div onMouseLeave={() => setShowSignin(false)} onClick={(e) => e.preventDefault()} className='mdl:w-[50%] lgl:w-[32%] sml:w-[50%] mr-10 rounded-sm h-[96] overflow-hidden -mt-2 bg-white border border-transparent '>
-                                                <SignInoptions />
-                                                <div className='flex flex-col gap-1 text-xs lgl:text-sm font-normal items-start mt-3 ml-[53%] '>
-                                                    <hr className='w-32' />
+                                                {/* <SignInoptions /> */}
+                                                <div className='flex flex-col gap-1 text-xs lgl:text-sm font-normal items-center  my-1  '>
+                                                    {/* <hr className='w-32' /> */}
                                                     <h4 className='hover:text-orange-500 hover:underline'>Switch Accounts</h4>
                                                     <h4 className='hover:text-orange-500 hover:underline' onClick={handleLogout}>Sign Out</h4>
                                                 </div>
