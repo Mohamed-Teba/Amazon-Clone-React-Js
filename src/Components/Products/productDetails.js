@@ -10,18 +10,14 @@ import { useCart } from '../../context/userCartContext';
 
 const ProductDetails = () => {
   const dispatch = useDispatch();
-
   const authenticated = useSelector((state) => state.amazon.isAuthenticated);
   const userInfo = useSelector((state) => state.amazon.userInfo);
   const [cartButton, setCartButton] = useState(false);
-
   const data = useLoaderData(); 
   const productsData = data.data.products; 
-
   const { title } = useParams();
   const product = productsData.find((product) =>
     product.title === title);
-
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   useEffect(() => {
     const interval = setInterval(() => {
