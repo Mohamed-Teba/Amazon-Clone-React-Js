@@ -20,8 +20,6 @@ const CartItems = () => {
 
 
     const { userCart, updateUserCart, cartTotalQty, cartTotalPrice } = useCart();
-
-
     const [totalQty, setTotalQty] = useState(0);
     const [totalPrice, setTotalPrice] = useState(0);
     const cartRef = useRef(null);
@@ -274,5 +272,3 @@ const CartItems = () => {
 }
 
 export default CartItems;
-
-
