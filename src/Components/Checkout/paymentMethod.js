@@ -3,21 +3,13 @@ import React, { useState } from "react";
 import { useAddress } from '../../context/userAddressContext';
 
 const PaymentMethod = () => {
-
     const { updateSelectedPayment } = useAddress();
-
     const [selectedPaymentMethod, setSelectedPaymentMethod] = useState(null);
-
-    
-
     const handleSelectPaymentMethod = (event) => {
         setSelectedPaymentMethod(event.target.value);
         updateSelectedPayment(event.target.value);
     };
-
-  
     
-
     return (
         <div>
             <p className="text-lg font-semibold text-red-700 mt-3">2 &nbsp; Select a Payment Method</p>
@@ -69,3 +61,4 @@ const PaymentMethod = () => {
 
 
 export default PaymentMethod;
+
