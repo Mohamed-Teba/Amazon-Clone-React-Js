@@ -17,16 +17,26 @@ This Amazon Clone is packed with real-world e-commerce features to provide an au
 
 - 🔐 **User Authentication**:
     - Secure sign-up and login using **Firebase Authentication** (Email/Password). Forgot password and profile management included.  
-- 🛍 **Product Listings**: Dynamic product catalog with advanced filtering (by category, price, or ratings) and search functionality.
-- 🛒 **Shopping Cart**: Add, remove, or update quantities in the cart with real-time updates and total price calculations.
-- ❤️ **Wishlist**: Save favorite items for future purchases (feature in active development).
-- 💳 **Stripe Payment Gateway**: Secure and seamless checkout flow using **Stripe** in test mode for realistic payment simulation.
-- 🧾 **Order History**: View detailed summaries of past orders, including timestamps, items, and totals.
-- 🔄 **State Persistence**: Leverage **Redux Persist** to retain cart and authentication state even after page refreshes or logouts.
-- 🌐 **Responsive Design**: Fully optimized for mobile, tablet, and desktop using **Tailwind CSS** and **Material-UI** for a polished, accessible UI.
-- 🔥 **Firebase Backend**: Robust backend powered by **Firebase Auth** for user management and **Firestore** for storing products, orders, and user data.
-- ⚡ **Performance Optimized**: Lazy-loaded components, optimized images, and efficient state management for a blazing-fast user experience.
-- 🔍 **Search & Filters**: Search products by name or description and filter by categories, price ranges, or customer ratings.
+- 🛍 **Product Listings**:
+    - Dynamic product catalog with advanced filtering (by category, price, or ratings) and search functionality.
+- 🛒 **Shopping Cart**:
+    - Add, remove, or update quantities in the cart with real-time updates and total price calculations.
+- ❤️ **Wishlist**:
+    - Save favorite items for future purchases (feature in active development).
+- 💳 **Stripe Payment Gateway**:
+    - Secure and seamless checkout flow using **Stripe** in test mode for realistic payment simulation.
+- 🧾 **Order History**:
+    - View detailed summaries of past orders, including timestamps, items, and totals.
+- 🔄 **State Persistence**:
+    - Leverage **Redux Persist** to retain cart and authentication state even after page refreshes or logouts.
+- 🌐 **Responsive Design**:
+    - Fully optimized for mobile, tablet, and desktop using **Tailwind CSS** and **Material-UI** for a polished, accessible UI.
+- 🔥 **Firebase Backend**:
+    - Robust backend powered by **Firebase Auth** for user management and **Firestore** for storing products, orders, and user data.
+- ⚡ **Performance Optimized**:
+    - Lazy-loaded components, optimized images, and efficient state management for a blazing-fast user experience.
+- 🔍 **Search & Filters**:
+    - Search products by name or description and filter by categories, price ranges, or customer ratings.
 
 ---
 
