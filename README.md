@@ -15,7 +15,8 @@ Welcome to the **Amazon Clone**, a full-stack e-commerce platform meticulously c
 
 This Amazon Clone is packed with real-world e-commerce features to provide an authentic shopping experience:
 
-- 🔐 **User Authentication**: Secure sign-up and login using **Firebase Authentication** (Email/Password). Forgot password and profile management included.  
+- 🔐 **User Authentication**:
+    - Secure sign-up and login using **Firebase Authentication** (Email/Password). Forgot password and profile management included.  
 - 🛍 **Product Listings**: Dynamic product catalog with advanced filtering (by category, price, or ratings) and search functionality.
 - 🛒 **Shopping Cart**: Add, remove, or update quantities in the cart with real-time updates and total price calculations.
 - ❤️ **Wishlist**: Save favorite items for future purchases (feature in active development).
