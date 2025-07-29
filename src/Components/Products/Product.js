@@ -6,7 +6,6 @@ import { db } from '../../firebase.config';
 import { collection, doc, setDoc, getDoc } from 'firebase/firestore';
 import { useCart } from '../../context/userCartContext';
 
-
 const Product = (props) => {
   const { productsData } = props;
   const dispatch = useDispatch();
@@ -102,5 +101,6 @@ const Product = (props) => {
     ))
   )
 }
+
 
 export default Product;
