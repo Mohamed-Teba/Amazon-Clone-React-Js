@@ -32,7 +32,6 @@ const Category = () => {
                                         <p className='self-start text-cyan-700 text-sm font-medium group-hover:text-red-400'>See more</p>
                                     </div>
                         }
-
                     </div>
                 ))
             }
@@ -41,3 +40,5 @@ const Category = () => {
 }
 
 export default Category
+
+
