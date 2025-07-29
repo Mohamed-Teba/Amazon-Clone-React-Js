@@ -6,7 +6,7 @@ A full-stack Amazon.com clone developed with React JS, Firebase backend, and Str
 
 ## 🔥 Live Demo
 
-[👉 View Live Website](#) *(Add your demo link here)*
+👉 [View Live Website](#)
 
 ---
 
@@ -41,20 +41,20 @@ A full-stack Amazon.com clone developed with React JS, Firebase backend, and Str
 
 |  Frontend  |    State Management     |         Backend         |       Styling      |   Payment   |
 |------------|-------------------------|-------------------------|--------------------|-------------|
-|  React JS  | Redux Toolkit + Persist | Firebase Auth/Firestore | Tailwind CSS + MUI |  Stripe   |
+|  React JS  | Redux Toolkit + Persist | Firebase Auth/Firestore | Tailwind CSS + MUI |   Stripe    |
 
 ### 📦 Key Packages
 
 
-- "react": "^18.2.0"
-- "firebase": "^10.1.0"
-- "@reduxjs/toolkit": "^1.9.5"
-- "react-router-dom": "^6.14.2"
-- "axios": "^1.4.0"
-- "@stripe/react-stripe-js": "^2.2.0"
-- "@mui/material": "^5.14.0"
-- "tailwindcss": "^3.3.3"
-- "framer-motion": "^10.12.22"
+- "react": "18.2.0"
+- "firebase": "10.1.0"
+- "@reduxjs/toolkit": "1.9.5"
+- "react-router-dom": "6.14.2"
+- "axios": "1.4.0"
+- "@stripe/react-stripe-js": "2.2.0"
+- "@mui/material": "5.14.0"
+- "tailwindcss": "3.3.3"
+- "framer-motion": "10.12.22"
 
 
 ---
