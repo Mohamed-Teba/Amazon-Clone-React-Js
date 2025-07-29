@@ -41,3 +41,4 @@ function Slider({images}){
     )
 }
 export default Slider;
+
