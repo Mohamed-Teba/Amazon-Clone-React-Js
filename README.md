@@ -1,4 +1,4 @@
-# 🛒 Amazon Clone (React JS + Firebase + Stripe)
+# 🛒 Amazon Clone (React JS + Tailwind CSS)
 
 A full-stack Amazon.com clone developed with React JS, Firebase backend, and Stripe payments. Focuses on real-world e-commerce features and a modern, smooth UI.
 
@@ -49,7 +49,7 @@ A full-stack Amazon.com clone developed with React JS, Firebase backend, and Str
 
 | Frontend   | State Management        | Backend              | Styling            | Payment |
 |------------|------------------------|----------------------|--------------------|---------|
-| React JS   | Redux Toolkit + Persist| Firebase Auth/Firestore| Tailwind CSS + MUI| Stripe  |
+| React JS   | Redux Toolkit + Persist| Firebase Auth/Firestore| Tailwind CSS + MUI|  Stripe  |
 
 ### 📦 Key Packages
 
