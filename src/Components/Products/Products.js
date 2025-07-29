@@ -15,17 +15,12 @@ const Products = () => {
   };
   const { data } = useLoaderData();
   const productsData = data.products;
-
   const { category } = useParams();
-
   const categoryProducts = category ? productsData.filter((product) => product.category.toLowerCase() === category.toLowerCase()) : productsData;
-
   const uniqueCategories = Array.from(new Set(productsData.map(product => product.category)));
-
   const [priceRange, setPriceRange] = useState("");
   const [starRange, setStarRange] = useState(""); 
   const [sortOrder, setSortOrder] = useState("default"); 
-
 
   const handlePriceFilter = (selectedRange) => {
     if (priceRange === selectedRange) {
@@ -258,3 +253,7 @@ const Products = () => {
   )
 }
 export default Products;
+
+
+
+
