@@ -4,13 +4,9 @@ import { collection, doc, getDoc, updateDoc } from "firebase/firestore";
 import { db } from "../../firebase.config";
 import { useAddress } from '../../context/userAddressContext';
 
-
 const UserAddresses = ({ setShowAddressForm }) => {
-
     const userInfo = useSelector((state) => state.amazon.userInfo);
-
     const { userAddress, updateUserAddress, updateSelectedAddress } = useAddress();
-
     const handleAddressSelect = (index) => {
         const selectedAddress = userAddress[index];
         updateSelectedAddress(selectedAddress);
@@ -69,3 +65,5 @@ const UserAddresses = ({ setShowAddressForm }) => {
 }
 
 export default UserAddresses;
+
+
