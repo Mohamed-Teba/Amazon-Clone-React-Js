@@ -42,8 +42,6 @@ const Header = () => {
         setQuantity(allQty);
     }, [products]);
 
-
-
     const handleLogout = () => {
         signOut(auth)
             .then(() => {
@@ -115,9 +113,7 @@ const Header = () => {
                                     }
                                 </div>
                             </div>
-
                         }
-
                     </div>
                 </Link>
                 {/* Signin end */}
@@ -163,3 +159,4 @@ const Header = () => {
 }
 
 export default Header
+
