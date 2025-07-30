@@ -185,7 +185,7 @@ const CartItems = () => {
                     </h2>
                     <p>{product.description}</p>
                     <div className="flex items-center">
-                      <p className="font-medium text-[20px]">₹&nbsp;</p>
+                      <p className="font-medium text-[20px]">EGY&nbsp;</p>
                       <span className="text-[26px] font-medium">
                         {product.price}.00
                       </span>
@@ -257,7 +257,7 @@ const CartItems = () => {
                     </h2>
                     <p>{product.description}</p>
                     <div className="flex items-center">
-                      <p className="font-medium text-[20px]">₹&nbsp;</p>
+                      <p className="font-medium text-[20px]">EGY&nbsp;</p>
                       <span className="text-[26px] font-medium">
                         {product.price}.00
                       </span>
@@ -316,7 +316,7 @@ const CartItems = () => {
               SubTotal ({userCart.length > 0 ? cartTotalQty : totalQty} items)
               :&nbsp;
               <div className="flex justify-center items-center">
-                <p className="font-medium text-sm mdl:text-lg">₹&nbsp;</p>
+                <p className="font-medium text-sm mdl:text-lg">EGY&nbsp;</p>
                 <span className="text-sm mdl:text-2xl font-bold">
                   {userCart.length > 0 ? cartTotalPrice : totalPrice}.00
                 </span>
@@ -353,7 +353,7 @@ const CartItems = () => {
             SubTotal ({userCart.length > 0 ? cartTotalQty : totalQty} items)
             :&nbsp;
             <div className="flex items-center">
-              <p className="font-medium text-[16px]">₹&nbsp;</p>
+              <p className="font-medium text-[16px]">EGY&nbsp;</p>
               <span className="text-[18px] font-bold">
                 {userCart.length > 0 ? cartTotalPrice : totalPrice}.00
               </span>
@@ -405,7 +405,7 @@ const CartItems = () => {
                     </p>
                   </Link>
                   <p className="text-red-600 text-[20px] font-semibold mt-2">
-                    ₹ {product.price}.00
+                    EGY {product.price}.00
                   </p>
                 </div>
               </div>
