@@ -77,7 +77,7 @@ const SignUp = () => {
   const emailValidation = (email) => {
     return String(email)
       .toLowerCase()
-      .match(/^\w+([-]?\w+)*@\w+([-]?\w+)*(\.\w{2,3})+$/);
+      .match(/^\w+([-]?\w+)@\w+([-]?\w+)(\.\w{2,3})+$/);
   };
 
   /**
@@ -86,7 +86,7 @@ const SignUp = () => {
    * Sets appropriate error messages and returns boolean validity.
    */
   const validate = () => {
-    const reqpassword = /^(?=.*[A-Z])(?=.*[^a-zA-Z0-9]).{8,}$/;
+    const reqpassword = /^(?=.*[a-zA-Z])(?=.*\d)(?=.*[^a-zA-Z0-9]).{8,}$/;
     const emailPattern = /^[a-zA-Z0-9]+@[a-zA-Z]+\.(com)$/;
 
     let isvalid = true;
