@@ -104,7 +104,7 @@ const Header = () => {
                                                         </button>
                                                     </Link>
                                                     <p className='text-xs'>New Customer?{""}
-                                                        <Link to='/SignUp'><span className='text-green-600 ml-1 cursor-pointer hover:text-orange-500 hover:underline'>Start here.</span></Link>
+                                                        <Link to='/createAccount'><span className='text-green-600 ml-1 cursor-pointer hover:text-orange-500 hover:underline'>Create an Account</span></Link>
                                                     </p>
                                                 </div>
                                                 <hr className='w-[80%] mx-auto' />
@@ -113,7 +113,9 @@ const Header = () => {
                                     }
                                 </div>
                             </div>
+
                         }
+
                     </div>
                 </Link>
                 {/* Signin end */}
