@@ -23,37 +23,40 @@ const CartItems = () => {
   const userInfo = useSelector((state) => state.amazon.userInfo); // User info
   const authenticated = useSelector((state) => state.amazon.isAuthenticated); // Auth status
 
+  const { userCart, updateUserCart, cartTotalQty, cartTotalPrice } = useCart(); // Cart context
 
-    const { userCart, updateUserCart, cartTotalQty, cartTotalPrice } = useCart();
-    const [totalQty, setTotalQty] = useState(0);
-    const [totalPrice, setTotalPrice] = useState(0);
-    const cartRef = useRef(null);
-    const [productDivHeight, setProductDivHeight] = useState(0);
-    useEffect(() => {
-        let allPrice = 0;
-        let allQty = 0;
-        products.forEach((product) => {
-            allPrice += product.quantity * product.price;
-            allQty += product.quantity;
-        });
-        setTotalPrice(allPrice);
-        setTotalQty(allQty);
+  const [totalQty, setTotalQty] = useState(0); // Total items (Redux cart)
+  const [totalPrice, setTotalPrice] = useState(0); // Total price (Redux cart)
+  const cartRef = useRef(null); // Ref to cart wrapper
+  const [productDivHeight, setProductDivHeight] = useState(0); // For suggestions panel
 
-        const updateCartHeight = () => {
-            if (cartRef.current) {
-                const cartHeight = cartRef.current.clientHeight;
-                const setHeight = cartHeight + 8;
-                setProductDivHeight(setHeight);
-            }
-        };
+  useEffect(() => {
+    // Calculate total price and quantity from Redux cart
+    let allPrice = 0;
+    let allQty = 0;
+    products.forEach((product) => {
+      allPrice += product.quantity * product.price;
+      allQty += product.quantity;
+    });
+    setTotalPrice(allPrice);
+    setTotalQty(allQty);
 
-        updateCartHeight();
-    }, [products, userCart]);
-
-    const navigate = useNavigate();
-    const handleCategoryClick = (category, title) => {
-        navigate(`/${category}/${title}`);
+    // Set height of cart section
+    const updateCartHeight = () => {
+      if (cartRef.current) {
+        const cartHeight = cartRef.current.clientHeight;
+        const setHeight = cartHeight + 8;
+        setProductDivHeight(setHeight);
+      }
     };
+
+    updateCartHeight();
+  }, [products, userCart]); // Update on cart change
+
+  const navigate = useNavigate();
+  const handleCategoryClick = (category, title) => {
+    navigate(`/${category}/${title}`);
+  };
 
   // Decrease item quantity in Firebase
   const handleDecreaseQuantity = async (productTitle) => {
@@ -359,7 +362,7 @@ const CartItems = () => {
 
           {/* Checkout button */}
           {authenticated ? (
-            <Link to="/checkout">
+            <Link to="">
               <button className="pt-2 w-full text-center rounded-lg bg-yellow-300 hover:bg-yellow-400 p-[4px] mt-3 shadow active:ring-2 active:ring-offset-1 active:ring-blue-500">
                 Proceed to Buy
               </button>
