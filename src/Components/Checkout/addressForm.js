@@ -14,7 +14,7 @@ import { motion } from "framer-motion";
 import { collection, doc, getDoc, setDoc } from "firebase/firestore";
 import { db } from "../../firebase.config";
 
-<<<<<<< HEAD
+
 // Redux hook to get user info from global state
 import { useSelector } from "react-redux";
 
@@ -38,11 +38,7 @@ const AddressForm = ({ setShowAddressForm }) => {
   const [landmarkInput, setLandmarkInput] = useState("");
   const [stateInput, setStateInput] = useState("");
   const countryInput = "India"; // Fixed country value
-=======
-const AddressForm = ({ setShowAddressForm }) => {
-    const userInfo = useSelector((state) => state.amazon.userInfo);
-    const { updateUserAddress } = useAddress();
->>>>>>> 065d13bc514f0944cfe658bbdfd72108175af39c
+
 
   // Error states for validation
   const [nameError, setNameError] = useState("");

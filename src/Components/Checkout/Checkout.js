@@ -1,15 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
-<<<<<<< HEAD
-import { Link } from "react-router-dom";
-import { logoBlack } from "../../assets/index";
-import { resetBuyNowProduct } from "../../Redux/amazonSlice";
-import { useAddress } from "../../context/userAddressContext";
-import AddressForm from "./addressForm";
-import UserAddresses from "./userAddresses";
-import PaymentMethod from "./paymentMethod";
-import OrderSummary from "./OrderSummary";
-=======
 import { Link } from 'react-router-dom';
 import { logoBlack } from '../../assets/index';
 import { resetBuyNowProduct } from '../../Redux/amazonSlice';
@@ -18,7 +8,6 @@ import AddressForm from './addressForm';
 import UserAddresses from './userAddresses';
 import PaymentMethod from './paymentMethod';
 import OrderSummary from './OrderSummary';
->>>>>>> 065d13bc514f0944cfe658bbdfd72108175af39c
 
 const Checkout = () => {
   const dispatch = useDispatch();

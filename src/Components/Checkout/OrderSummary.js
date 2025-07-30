@@ -1,44 +1,29 @@
-import React, { useState, useRef, useEffect } from "react";
-import { useCart } from "../../context/userCartContext";
-import { useAddress } from "../../context/userAddressContext";
-import { useOrders } from "../../context/userOrderContext";
-import { useDispatch, useSelector } from "react-redux";
+import React, { useState, useRef, useEffect } from 'react';
+import { useCart } from '../../context/userCartContext';
+import { useAddress } from '../../context/userAddressContext';
+import { useOrders } from '../../context/userOrderContext';
+import { useDispatch, useSelector } from 'react-redux';
 import { collection, doc, setDoc } from "firebase/firestore";
 import { db } from "../../firebase.config";
-import { resetBuyNowProduct, addToOrders } from "../../Redux/amazonSlice";
-import { useNavigate } from "react-router-dom";
+import { resetBuyNowProduct, addToOrders } from '../../Redux/amazonSlice';
+import { useNavigate } from 'react-router-dom';
 
 const OrderSummary = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
-
-  // Get current orders from Redux store
   const orders = useSelector((state) => state.amazon.orders);
-
-  // Get cart data from context
   const { userCart } = useCart();
-
-  // Get user orders updater from context
   const { updateUserOrders } = useOrders();
-
-  // Get user info and product selected for "Buy Now" from Redux store
   const userInfo = useSelector((state) => state.amazon.userInfo);
   const product = useSelector((state) => state.amazon.buyNowProduct);
-
-  // If "Buy Now" product exists, calculate its total price
   if (product) {
     var productQty = product.quantity;
     var productPrice = product.price;
     var productTotalPrice = productPrice * productQty;
   }
-
-  // Get cart summary and updater from context
   const { cartTotalQty, cartTotalPrice, updateUserCart } = useCart();
-
-  // Get selected address and payment method from context
   const { selectedAddress, selectedPayment } = useAddress();
 
-  // Set delivery charges if total is below threshold
   let deliveryCharges = 0;
   if ((productTotalPrice || cartTotalPrice) < 499) {
     deliveryCharges = 40;
@@ -47,36 +32,31 @@ const OrderSummary = () => {
   const [deliveryInfo, setDeliveryInfo] = useState(false);
   const deliveryInfoRef = useRef(null);
 
-  // Toggle delivery info box
   const toggleDeliveryInfo = () => {
     setDeliveryInfo(!deliveryInfo);
   };
 
-  // Reset the "Buy Now" product from Redux store
   const resetBuyNow = () => {
     dispatch(resetBuyNowProduct());
   };
 
-  // Add event listener for browser back button to reset "Buy Now"
   useEffect(() => {
-    window.addEventListener("popstate", resetBuyNow);
+    window.addEventListener('popstate', resetBuyNow);
     return () => {
-      window.removeEventListener("popstate", resetBuyNow);
+      window.removeEventListener('popstate', resetBuyNow);
     };
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [dispatch]);
 
-  // Generate a unique order number
   const generateUniqueNumber = () => {
     const timestamp = new Date().getTime();
     const randomDigits = Math.floor(Math.random() * 1000);
     return `ORD-${timestamp}-${randomDigits}`;
   };
 
-  // Handle order placement and save to Firebase
   const makePayment = async () => {
     const uniqueNumber = generateUniqueNumber();
 
-    // If ordering a single product (Buy Now)
     if (product) {
       const productOrderDetails = {
         uniqueNumber,
@@ -97,12 +77,10 @@ const OrderSummary = () => {
         date: new Date().toISOString(),
       };
 
-      // Update Redux, context, and Firebase
       dispatch(addToOrders([...orders, productOrderDetails]));
       updateUserOrders([...orders, productOrderDetails]);
       await saveOrderToFirebase([...orders, productOrderDetails]);
-    }
-    // If ordering all items in cart
+    } 
     else {
       const updatedCart = userCart.map((cartItem) => ({
         ...cartItem,
@@ -111,36 +89,26 @@ const OrderSummary = () => {
         date: new Date().toISOString(),
         uniqueNumber: generateUniqueNumber(),
       }));
-
-      // Update Redux, context, and Firebase
       dispatch(addToOrders([...orders, ...updatedCart]));
       updateUserOrders([...orders, ...updatedCart]);
       await saveOrderToFirebase([...orders, ...updatedCart]);
 
-      // Clear user cart in Firebase and context
-      const userCartRef = doc(
-        collection(db, "users", userInfo.email, "cart"),
-        userInfo.id
-      );
+      const userCartRef = doc(collection(db, 'users', userInfo.email, 'cart'), userInfo.id);
       await setDoc(userCartRef, { cart: [] }, { merge: true });
       updateUserCart([]);
     }
 
-    // Reset "Buy Now" product and navigate to orders page
     resetBuyNow();
     navigate("/orders");
+
   };
 
-  // Save order data to Firestore under user's document
   const saveOrderToFirebase = async (order) => {
-    const OrdersRef = doc(
-      collection(db, "users", userInfo.email, "orders"),
-      userInfo.id
-    );
+    const OrdersRef = doc(collection(db, "users", userInfo.email, "orders"), userInfo.id);
     try {
       await setDoc(OrdersRef, { orders: order }, { merge: true });
     } catch (error) {
-      console.error("Error saving orders to Firebase:", error);
+      console.error('Error saving orders to Firebase:', error);
     }
   };
 
@@ -155,12 +123,7 @@ const OrderSummary = () => {
           </div>
           <div className="flex justify-between mb-[2px] text-sm">
             <p>Total Price:</p>
-            <p>
-              ₹
-              {product
-                ? productTotalPrice.toFixed(2)
-                : cartTotalPrice.toFixed(2)}
-            </p>
+            <p>₹{product ? productTotalPrice.toFixed(2) : cartTotalPrice.toFixed(2)}</p>
           </div>
           <div className="flex justify-between mb-[2px] text-sm">
             <p>Delivery:</p>
@@ -168,84 +131,54 @@ const OrderSummary = () => {
           </div>
           <div className="text-xl font-semibold flex justify-between py-2 border-t border-gray-400 text-red-700">
             <p>Order Total:</p>
-            <p>
-              ₹
-              {product
-                ? (productTotalPrice + deliveryCharges).toFixed(2)
-                : (cartTotalPrice + deliveryCharges).toFixed(2)}
-            </p>
+            <p>₹{product ? (productTotalPrice + deliveryCharges).toFixed(2) : (cartTotalPrice + deliveryCharges).toFixed(2)}</p>
           </div>
 
-          {selectedAddress && (
-            <div>
-              <h3 className="border-t border-gray-400 text-lg font-semibold py-2">
-                Selected Address
-              </h3>
+          {selectedAddress &&
+            <div >
+              <h3 className="border-t border-gray-400 text-lg font-semibold py-2">Selected Address</h3>
               <div className="mb-2 text-sm">
-                <p className="font-semibold">Name : {selectedAddress.name}</p>
-                <span>
-                  {selectedAddress.address}, {selectedAddress.area},{" "}
-                  {selectedAddress.landmark}, {selectedAddress.city},{" "}
-                  {selectedAddress.pincode}, {selectedAddress.state},{" "}
-                  {selectedAddress.country}
-                </span>
+                <p className='font-semibold'>Name : {selectedAddress.name}</p>
+                <span>{selectedAddress.address}, {selectedAddress.area}, {selectedAddress.landmark}, {selectedAddress.city}, {selectedAddress.pincode}, {selectedAddress.state}, {selectedAddress.country}</span>
               </div>
             </div>
-          )}
+          }
 
-          {selectedPayment && (
-            <div>
-              <h3 className="border-t border-gray-400 text-lg font-semibold py-2">
-                Selected Payment Method
-              </h3>
+          {selectedPayment &&
+            <div >
+              <h3 className="border-t border-gray-400 text-lg font-semibold py-2">Selected Payment Method</h3>
               <div className="mb-2 text-sm">
-                <p className="font-semibold capitalize"> {selectedPayment}</p>
+                <p className='font-semibold capitalize'> {selectedPayment}</p>
               </div>
             </div>
-          )}
+          }
         </div>
 
-        <div className="mx-[18px] border-t border-gray-400">
-          {selectedAddress && selectedPayment && (
-            <button
-              className="w-full text-center text-sm rounded-lg bg-yellow-300 hover:bg-yellow-400 p-[7px] mt-2 active:ring-2 active:ring-offset-1 active:ring-blue-500"
+        <div className='mx-[18px] border-t border-gray-400'>
+          {(selectedAddress && selectedPayment) &&
+            <button className="w-full text-center text-sm rounded-lg bg-yellow-300 hover:bg-yellow-400 p-[7px] mt-2 active:ring-2 active:ring-offset-1 active:ring-blue-500"
               onClick={makePayment}
             >
               Place your order
             </button>
-          )}
+          }
           <p className="text-xs text-gray-600  my-2 text-center">
             By placing your order, you agree to Amazon's
-            <a
-              href="https://www.amazon.in/gp/help/customer/display.html?nodeId=200522700"
-              className="text-blue-500 hover:text-red-500 cursor-pointer"
-            >
-              {" "}
-              privacy notice{" "}
-            </a>
+            <a href="https://www.amazon.in/gp/help/customer/display.html?nodeId=200522700" className='text-blue-500 hover:text-red-500 cursor-pointer'> privacy notice </a>
             and
-            <a
-              href="https://www.amazon.in/gp/help/customer/display.html?nodeId=200545940"
-              className="text-blue-500 hover:text-red-500 cursor-pointer"
-            >
-              {" "}
-              conditions of use
-            </a>
-            .
+            <a href="https://www.amazon.in/gp/help/customer/display.html?nodeId=200545940" className='text-blue-500 hover:text-red-500 cursor-pointer'> conditions of use</a>.
           </p>
         </div>
 
         <div className="flex justify-between border-t border-gray-400 rounded-br-lg rounded-bl-lg bg-gray-200">
-          <p
-            onClick={toggleDeliveryInfo}
-            className="pl-[18px] my-4 text-xs tracking-wide text-blue-500 hover:underline hover:text-red-700 hover:cursor-pointer"
-          >
+          <p onClick={toggleDeliveryInfo} className="pl-[18px] my-4 text-xs tracking-wide text-blue-500 hover:underline hover:text-red-700 hover:cursor-pointer">
             How are delivery costs calculated?
           </p>
         </div>
       </div>
 
-      {deliveryInfo && (
+      {
+        deliveryInfo &&
         <div ref={deliveryInfoRef} className="border mt-2 w-[400px]">
           <table className="w-full text-center">
             <thead>
@@ -282,9 +215,7 @@ const OrderSummary = () => {
                 <td className="px-2 py-1 border text-xs">N.A</td>
               </tr>
               <tr className="bg-gray-100">
-                <td className="px-2 py-1 border text-xs">
-                  Standard Delivery**
-                </td>
+                <td className="px-2 py-1 border text-xs">Standard Delivery**</td>
                 <td className="px-2 py-1 border text-xs">Free</td>
                 <td className="px-2 py-1 border text-xs">Free</td>
                 <td className="px-2 py-1 border text-xs">₹40</td>
@@ -292,27 +223,15 @@ const OrderSummary = () => {
             </tbody>
           </table>
           <p className="text-sm text-gray-600 mt-2 p-2">
-            **Standard Delivery charges are free for non-Prime members for
-            orders ₹499 or more.
+            **Standard Delivery charges are free for non-Prime members for orders ₹499 or more.
           </p>
-          <div className="flex justify-end relative">
-            <button
-              className="text-sm text-blue-500 hover:text-red-700 absolute -top-5 right-1"
-              onClick={toggleDeliveryInfo}
-            >
-              Close
-            </button>
+          <div className='flex justify-end relative'>
+            <button className='text-sm text-blue-500 hover:text-red-700 absolute -top-5 right-1' onClick={toggleDeliveryInfo}>Close</button>
           </div>
         </div>
-      )}
+      }
     </div>
-  );
-};
+  )
+}
 
 export default OrderSummary;
-<<<<<<< HEAD
-=======
-
-
-
->>>>>>> 065d13bc514f0944cfe658bbdfd72108175af39c

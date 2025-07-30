@@ -2,7 +2,6 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { collection, doc, getDoc, updateDoc } from "firebase/firestore";
 import { db } from "../../firebase.config";
-<<<<<<< HEAD
 import { useAddress } from "../../context/userAddressContext";
 
 const UserAddresses = ({ setShowAddressForm }) => {
@@ -27,17 +26,6 @@ const UserAddresses = ({ setShowAddressForm }) => {
       userInfo.id
     );
     const docSnapshot = await getDoc(addressesRef);
-=======
-import { useAddress } from '../../context/userAddressContext';
-
-const UserAddresses = ({ setShowAddressForm }) => {
-    const userInfo = useSelector((state) => state.amazon.userInfo);
-    const { userAddress, updateUserAddress, updateSelectedAddress } = useAddress();
-    const handleAddressSelect = (index) => {
-        const selectedAddress = userAddress[index];
-        updateSelectedAddress(selectedAddress);
-    };
->>>>>>> 065d13bc514f0944cfe658bbdfd72108175af39c
 
     if (docSnapshot.exists()) {
       const addresses = docSnapshot.data().Addresses;
