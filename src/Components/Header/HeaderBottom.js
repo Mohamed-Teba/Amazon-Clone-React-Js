@@ -101,4 +101,3 @@ const HeaderBottom = () => {
 }
 
 export default HeaderBottom
-

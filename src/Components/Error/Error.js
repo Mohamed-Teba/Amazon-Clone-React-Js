@@ -15,5 +15,3 @@ useEffect(()=>(
 }
 
 export default ErrorPage
-
-

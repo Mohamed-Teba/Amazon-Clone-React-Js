@@ -45,6 +45,7 @@ const OrderSummary = () => {
     return () => {
       window.removeEventListener('popstate', resetBuyNow);
     };
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [dispatch]);
 
   const generateUniqueNumber = () => {
@@ -234,6 +235,3 @@ const OrderSummary = () => {
 }
 
 export default OrderSummary;
-
-
-
