@@ -7,7 +7,7 @@ Welcome to the **Amazon Clone**, a full-stack e-commerce platform meticulously c
 ## 🔥 Live Demo
 
 Experience the app in action! Browse products, add to cart, and simulate payments in a fully functional e-commerce environment:
-- 👉 [Explore the Live Website](https://amazon-clone-react-2wfvihbx3-mohamed-tebas-projects.vercel.app/)  
+- 👉 [Explore the Live Website](https://amazon-rouge-xi.vercel.app/)  
 
 ---
 
