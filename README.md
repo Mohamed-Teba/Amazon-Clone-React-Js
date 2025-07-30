@@ -71,7 +71,7 @@ The application is modular, built with reusable React components for maintainabi
 ## 📋 Project Management
 
 Track the development progress, tasks, and component details on our **Notion workspace**:  
-- 👉 [Notion Project Board](https://www.notion.so/Amazon-Clone-Project-Tracker-1234567890abcdef)  
+- 👉 [Notion Project Board](https://www.notion.so/23a09cda8e30803081c4cd1e1ccf18d0?v=23a09cda8e3080e584b1000cf0bf3257)  
 
 The Notion board includes:
 - Task assignments for each component (Header, Footer, Products, etc.).
@@ -214,7 +214,7 @@ We welcome contributions to make this project even better! To contribute:
 4. Push to your branch (`git push origin feature/YourFeature`).
 5. Open a Pull Request with a clear description of your changes.
 
-Please ensure your code follows the project’s coding standards and includes tests where applicable. Check the [Notion Project Board](https://www.notion.so/Amazon-Clone-Project-Tracker-1234567890abcdef) for open tasks and feature requests.
+Please ensure your code follows the project’s coding standards and includes tests where applicable. Check the [Notion Project Board](https://www.notion.so/23a09cda8e30803081c4cd1e1ccf18d0?v=23a09cda8e3080e584b1000cf0bf3257) for open tasks and feature requests.
 
 ### Current Contributors
 - **Mohamed Teba** (Lead Developer)
