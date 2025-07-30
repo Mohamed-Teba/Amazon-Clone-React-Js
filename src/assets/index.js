@@ -10,7 +10,7 @@ import down from './down.png';
 import facebook from './facebook.png';
 import google from './google.png';
 import logoBlack from './logoBlack.png';
-import egyptFlag from './egypt-flag.png';
+import egyptFlag from './England-Flag.jpg';
 import delivery from './delivery.png';
 import delivered from './delivered.png';
 import cod from './cod.png';
